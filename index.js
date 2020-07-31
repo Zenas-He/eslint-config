@@ -92,6 +92,16 @@ module.exports = {
     // -> https://github.com/benmosher/eslint-plugin-import/issues/1453
     "import/no-cycle": "off",
     "import/named": "off",
+    "import/order": ["error", {
+      "groups": ['builtin', 'external', ['internal', 'parent', 'sibling']],
+      "newlines-between": "always",
+      "pathGroups": [
+        {
+          "pattern": "src/**",
+          "group": "internal"
+        }
+      ]
+    }],
 
     "react/jsx-wrap-multilines": ["error",
       {
